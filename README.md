@@ -1,2 +1,3 @@
-Saving Planer
-for planning saving for vaccation or other similar
+# Saving Planner
+
+This is the final version after resolving the conflict.
