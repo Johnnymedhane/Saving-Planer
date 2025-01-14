@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Button } from "./App";
+import { Button } from "./Button";
 import { AddPersonForm } from "./AddPersonForm";
 import { Participante } from "./Participante";
+import { color } from "chart.js/helpers";
 
 export function Plan({ plan, onUpdateContribution, onAddperson }) {
   const [addPersonForm, setAddPersonForm] = useState(false);
@@ -54,18 +55,40 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
   }, [percentage, star]);
 
   const showCelebration = star === 100;
+  
+
 
   return (
     <li>
-      <h1> 🎯 Saving Goal </h1>
-
+      <h1> 🎯 Saving Goal for {plan.goalName} </h1>
+      <p>{plan.description}</p>
       <div className="indication">
         <h3>Your plan for {plan.goalName} is ready!</h3>
         <div className="description">
-          <div>
-            <p>{plan.description}</p>
+          <div className="contributions">
+              <h4>Contributions </h4>
+            
+              <ul>
+               {plan.participants.map((p) => {
+                 const contributionPercentage = plan.savedAmount > 0 
+                 ? (p.contribution / plan.targetAmount) * 100 
+                 : 0;
+               return (
+                <li key={p.id}>
+                  <div className="percentage-contibution">
+                <p> <strong>{p.name} </strong></p>
+                 <div className="contribution-bar"
+                    style={{ width: `${contributionPercentage + 10}px` }}>    
+                    <span>{contributionPercentage}%</span>
+                        </div>
+                  </div> 
+                 </li>)
+                 })}
+                 </ul>
+                 
             <p> 💰 Saved Amount: {plan.savedAmount}$</p>
           </div>
+          
           <div
             className="chart"
             style={{
@@ -83,7 +106,10 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
         </p>
         {showCelebration && <h3 style={{ color: "gold" }}>🎉 Congratulations! Goal achieved! 🎉</h3>}
       </div>
-      <h2>👥 Group Management</h2>
+      <h2>
+      <span className="material-symbols-outlined">groups_2
+        </span> Group Management
+        </h2>
       <div className="group-management">
         <h3>Participants</h3>
         <ul>

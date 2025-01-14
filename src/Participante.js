@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "./App";
+import { Button } from "./Button";
 
 
 
@@ -29,14 +29,14 @@ export function Participante({ participante, goalID, onUpdateContribution, id })
         <h3>{participante.name}</h3>
 
         <span> contributed: {participante.contribution}$</span>
-        <Button onclick={showDepositInput}>
+        <Button onClick={showDepositInput}>
           {showDeposit ? "Close" : " Add Contibution"}</Button>
       </div>
       {showDeposit &&
         <label>
           <input type="number" value={contributionAmount}
             onChange={(e) => setContributionAmount(e.target.value)} />
-          <Button onclick={addContribution}>Add</Button>
+          <Button onClick={addContribution}>Add</Button>
           <p className="error">{error}</p>
         </label>}
     </li>

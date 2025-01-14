@@ -1,3 +1,7 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +16,10 @@
   --color4:#E7F1FF;
   --color5:#f9fcff;
   --text:clamp(1.3rem, 0.185rem + 3.258vw, 0.95rem);
-  --small-text:clamp(0.970rem, 0.185rem + 3.258vw, 0.85rem)
+  --small-text:clamp(0.570rem, 0.185rem + 3.258vw, 0.75rem)
 }
 html{
-  font-family: Arial, Helvetica, sans-serif
+  font-family:  poppin, sans-serif
  
 }
 body{
@@ -33,17 +37,17 @@ rgba(2,0,36,1) 0%,
 }
 
 h1{
-  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 2.625rem);
+  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h2{
-  font-size: (1.000rem, 0.185rem + 3.258vw, 3.525rem);
+  font-size: (1.000rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h3{
-  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 1.835rem);
-
+  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 2.835rem);
+  
 }
 h4, h5, h6{
-  font-size: clamp(0.900rem, 0.185rem + 3.258vw, 1.125rem);
+  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 1.525rem);
 }
 .App{
    min-height: 100vh; 
@@ -54,8 +58,8 @@ form{
   position: relative;
   display: flex;
   margin: auto;
-  width:500px ;
-  margin-top: 15px;
+  max-width: 700px;
+  margin-top: 18px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -65,7 +69,17 @@ form{
   font-size: var(--text);
   border: 1px solid var(--color5);
   box-shadow: 4px 4px 164px var(--color4);
+  transition: all 0.5s;
+  animation: form 0.5s linear;
   
+}
+@keyframes form {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
  form label{
   display: flex;
@@ -79,10 +93,23 @@ form{
 h1, h2 {
 color: aqua;
 text-align: center;
+animation: headers 0.5s linear;
+
+}
+@keyframes headers {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 h3, h4{
   color: cornsilk;
   text-align: center;
+  font-family: poppin;
 }
 
 .header {
@@ -90,8 +117,11 @@ h3, h4{
   padding: 2rem;
   background-color: var(--color4);
   border-bottom: 1px solid var(--color1);
-}
 
+}
+strong{
+  color:aqua;
+}
 .header h1 {
   margin-bottom: 0.5rem;
 }
@@ -101,8 +131,18 @@ h3, h4{
   color: var(--color1);
   line-height: 1.5;
   margin-bottom: 1rem;
+  animation: head 0.6s linear;
 }
-
+@keyframes head {
+  from {
+    transform: translateY(-100%);
+    
+  }
+  to {
+    transform: translateY(0);
+    
+  }
+}
 
 .goal-form h2{
   margin-bottom: 2rem;
@@ -129,7 +169,7 @@ button:hover{
   background:var(--color3);
   color: var(--color1);
 }
-.goal-form button{
+form button{
  margin-top: 15px;
  margin-left: 50%;
 }
@@ -145,10 +185,13 @@ input,textarea{
 }
 
 .invalid {
-  border: 1px solid red;
+ border: 2px solid red;
 }
 
-
+.error{
+  color: red;
+  font-size: var(--small-text);
+}
 
 
 input:focus, textarea:focus{
@@ -163,7 +206,7 @@ input:focus, textarea:focus{
 
 
 .indication{
-  margin-top: 2rem;
+  margin-top: 1.6rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
@@ -177,12 +220,31 @@ input:focus, textarea:focus{
 }
 
  .goal-display h1{
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
  
   
 } 
+.goal-display p{
+  text-align: center;
+  line-height: 1.5;
+}
+.goal-display p strong:nth-child(4){
+  display:inline-block;
+  animation: sec 1s linear infinite;
+}
+@keyframes sec {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .goal-display li{
- 
+ margin-top: 1.5rem;
   list-style: none;
 }
 .description{
@@ -190,6 +252,40 @@ input:focus, textarea:focus{
   align-items: center;
   gap: 10vh;
 }
+.contributions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contributions li{
+  margin: 0 0 10px;
+}
+.contributions p {
+  line-height: normal;
+}
+.contributions p strong{
+  line-height: normal;
+  color: rgb(222, 171, 103);
+}
+
+.percentage-contibution {
+  display: flex;
+  gap: 8px;
+align-items: center;
+}
+.contribution-bar {
+  
+  height: 15px;
+  background-color: rgb(0, 191, 255);
+  
+  text-align: center;
+  color: var(--color5);
+  font-size: var(--small-text);
+  
+}
+
+
+
 .chart{
   position: relative;
   width: 130px;
@@ -232,17 +328,18 @@ input:focus, textarea:focus{
   grid-template-columns: 0.8rem 1fr auto;
   align-items: center;
   margin-top: 0.7rem;
-  row-gap: 0.6rem;
+  row-gap: 0.3rem;
 max-width: 700px;
   padding: 0.7rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
   border-radius: 7px;
   transition: 0.5s;
 }
-.participante label{
+.group-management label{
   display: flex;
-  justify-content: center;
+  margin-bottom: 10px;
   align-items: center;
+  gap: 15px;
 }
 .participante span{
   grid-row: 2;
@@ -253,13 +350,26 @@ max-width: 700px;
 .participante img{
   border-radius: 50%;
 }
-.group-management label{
- 
-}
+
  label .error{
   color: red;
   font-size: var(--small-text);
 }
 
-
+@media  screen and (max-width:768px) {
+  body{
+    padding: 0 0 20px;
+  }
+form{
+  max-width: 600px;
+}
+.description{
+  flex-direction: column;
+  gap: 5vh;
+}
+.indication{
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+}
 

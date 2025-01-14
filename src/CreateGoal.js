@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "./App";
+import { Button } from "./Button";
 
 export function CreateGoal({ onSubmit }) {
   const [goalName, setGoalName] = useState("");

@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { CreateGoal } from "./CreateGoal";
 import { Description } from "./Description";
+import { Button } from "./Button";
 
 let goalList = [
    {
@@ -91,10 +92,6 @@ function addNewParticipante(newPerson, goalId) {
 
   );
 }
-export function Button({children, onclick, type="buttn"}){
-  return <button className="button" type={type} onClick={onclick}>{children}</button>
-}
-
 function Header({onClick, formIsOpen}) {
   return (
     <header className="header">
@@ -103,7 +100,7 @@ function Header({onClick, formIsOpen}) {
         Goal Tracker helps you set and track your financial savings goals.
         Create goals, monitor progress, and work towards achieving your dreams.
       </p>
-      <Button onclick={onClick}>
+      <Button onClick={onClick}>
         {formIsOpen ? "Close Form" : "Add New Goal"}
       </Button>
     </header>
