@@ -360,6 +360,13 @@ max-width: 700px;
   body{
     padding: 0 0 20px;
   }
+  h2 {
+    font-size: 1.8rem; /* Fixed size for small screens */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* Fixed size for small screens */
+  }
 form{
   max-width: 600px;
 }
