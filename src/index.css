@@ -40,7 +40,7 @@ h1{
   font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h2{
-  font-size: (1.000rem, 0.185rem + 3.258vw, 3.625rem);
+  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h3{
   font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.235rem);
