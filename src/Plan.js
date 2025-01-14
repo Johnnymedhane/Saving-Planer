@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Button } from "./Button";
 import { AddPersonForm } from "./AddPersonForm";
 import { Participante } from "./Participante";
-import { color } from "chart.js/helpers";
 
 export function Plan({ plan, onUpdateContribution, onAddperson }) {
   const [addPersonForm, setAddPersonForm] = useState(false);
