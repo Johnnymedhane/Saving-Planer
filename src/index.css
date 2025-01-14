@@ -15,7 +15,7 @@
   --color3: #D0E3FF;
   --color4:#E7F1FF;
   --color5:#f9fcff;
-  --text:clamp(1.3rem, 0.185rem + 3.258vw, 0.95rem);
+  --text:clamp(1.2rem, 0.185rem + 3.258vw, 0.95rem);
   --small-text:clamp(0.570rem, 0.185rem + 3.258vw, 0.75rem)
 }
 html{
@@ -37,13 +37,13 @@ rgba(2,0,36,1) 0%,
 }
 
 h1{
-  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.625rem);
+  font-size: clamp(2.000rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h2{
-  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.625rem);
+  font-size: clamp(1.900rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h3{
-  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.235rem);
+  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 3.235rem)
   
 }
 h4, h5, h6{
@@ -109,7 +109,7 @@ animation: headers 0.5s linear;
 h3, h4{
   color: cornsilk;
   text-align: center;
-  font-family: poppin;
+  
 }
 
 .header {
