@@ -3,7 +3,7 @@ import { CreateGoal } from "./CreateGoal";
 import { Description } from "./Description";
 import { Button } from "./Button";
 
-let goalList = [
+/*let goalList = [
    {
     id: crypto.randomUUID(),
     goalName: "Vacation",
@@ -22,7 +22,7 @@ let goalList = [
     
   },
 ]
-
+*/
 function App() {
   const [goals, setGoals]= useState([]);
   const [showForm, setShowForm] = useState(false);
