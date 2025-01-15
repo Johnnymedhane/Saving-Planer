@@ -2,8 +2,13 @@ import { useState } from "react";
 import { CreateGoal } from "./CreateGoal";
 import { Description } from "./Description";
 import { Button } from "./Button";
+<<<<<<< HEAD
 /*
 let goalList = [
+=======
+
+/*let goalList = [
+>>>>>>> dda07c67197f7a75a8a7248649ec2f577f5d2987
    {
     id: crypto.randomUUID(),
     goalName: "Vacation",
@@ -21,8 +26,13 @@ let goalList = [
     ],
     
   },
+<<<<<<< HEAD
 ] */
 
+=======
+]
+*/
+>>>>>>> dda07c67197f7a75a8a7248649ec2f577f5d2987
 function App() {
   const [goals, setGoals]= useState([]);
   const [showForm, setShowForm] = useState(false);

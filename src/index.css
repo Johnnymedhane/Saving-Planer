@@ -48,8 +48,16 @@ h4, h5, h6{
 }
 
 .App {
+<<<<<<< HEAD
   min-height: 70vh;
   padding: 0.3rem;
+=======
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+>>>>>>> dda07c67197f7a75a8a7248649ec2f577f5d2987
 }
 
 form{
