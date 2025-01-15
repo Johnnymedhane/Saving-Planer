@@ -26,7 +26,7 @@ export function Participante({ participante, goalID, onUpdateContribution, id })
       <div className="participante">
 
         <img src={participante.image} alt={participante.id} />
-        <h3>{participante.name}</h3>
+        <h4>{participante.name}</h4>
 
         <span> contributed: {participante.contribution}$</span>
         <Button onClick={showDepositInput}>

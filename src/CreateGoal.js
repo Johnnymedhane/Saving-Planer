@@ -13,7 +13,7 @@ export function CreateGoal({ onSubmit }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!goalName || !targetAmount || !deadline) {
+    if (!goalName || !targetAmount || !deadline || !deposit) {
       setErrorMessage("Please fill out all required fields.");
       return;
     }

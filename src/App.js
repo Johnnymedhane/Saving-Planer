@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CreateGoal } from "./CreateGoal";
 import { Description } from "./Description";
 import { Button } from "./Button";
-
+/*
 let goalList = [
    {
     id: crypto.randomUUID(),
@@ -21,7 +21,7 @@ let goalList = [
     ],
     
   },
-]
+] */
 
 function App() {
   const [goals, setGoals]= useState([]);
@@ -30,7 +30,8 @@ function App() {
   function handleGoalForm(newItem){
     setGoals(pre => [...pre, newItem]);
     console.log(goals)
-    alert(`Saved Amount So Far ${newItem.savedAmount}$`);
+    alert(`Saved Amount so far ${newItem.savedAmount}$`);
+    setShowForm((prev) => !prev);
   }
   function toggleFormVisibility() {
     setShowForm((prev) => !prev);

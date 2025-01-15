@@ -29,6 +29,8 @@ rgba(2,0,36,1) 0%,
  rgba(0,212,255,1) 100%);
  min-height: 100vh;
  font-size: var(--text);
+ display: flex;
+ align-items: center;
 }
 
 h1{
@@ -38,20 +40,16 @@ h2{
   font-size: clamp(1.600rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h3{
-  font-size: clamp(1.400rem, 0.185rem + 3.258vw, 3.235rem)
+  font-size: clamp(1.400rem, 0.185rem + 3.258vw, 1.635rem)
   
 }
 h4, h5, h6{
-  font-size: clamp(1.600rem, 0.185rem + 3.258vw, 1.825rem);
+  font-size: clamp(1.000rem, 0.185rem + 3.258vw, 1.225rem);
 }
 
 .App {
-  height: 100%;
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
+  min-height: 70vh;
+  padding: 0.3rem;
 }
 
 form{
@@ -115,8 +113,9 @@ h3, h4{
 .header {
   text-align: center;
   padding: 2rem;
+  width: 100%;
   background-color: var(--color5);
-  border-bottom: 4px solid rgb(25, 22, 17);
+  border-bottom: 2px solid rgb(25, 22, 17);
 
 }
 strong{
@@ -201,7 +200,7 @@ input:focus, textarea:focus{
 .goal-display{
   margin-top: 4rem;
   color: var(--color4);
- min-height: 100vh;
+  padding: 10px;
 }
  .goal-display h1{
   margin-bottom: 1rem;
@@ -320,12 +319,13 @@ align-items: center;
   font-size: 2.5rem;
 }
 .group-management{
+  margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
   background:var(--color2);
   padding: 0.8rem;
   border-radius: 16px;
-  
+  max-width: 800px;
 }
 .participante{
   background: rgb(181, 114, 89);
