@@ -6,7 +6,7 @@ import { Button } from "./Button";
 let goalList = [
    {
     id: crypto.randomUUID(),
-    goalName: "vaction",
+    goalName: "Vacation",
     targetAmount: parseFloat(200),
     deadline: "02/07/25",
     description: "Travel to Japan",
@@ -24,14 +24,13 @@ let goalList = [
 ]
 
 function App() {
-  const [goals, setGoals]= useState(goalList);
+  const [goals, setGoals]= useState([]);
   const [showForm, setShowForm] = useState(false);
 
   function handleGoalForm(newItem){
     setGoals(pre => [...pre, newItem]);
     console.log(goals)
-   
-    
+    alert(`Saved Amount So Far ${newItem.savedAmount}$`);
   }
   function toggleFormVisibility() {
     setShowForm((prev) => !prev);
@@ -64,7 +63,7 @@ function addNewParticipante(newPerson, goalId) {
     prev.map((goal) => {
       if (goal.id === goalId) {
         const updatedParticipants = [...goal.participants, newPerson];
-
+      
         // Calculate the new savedAmount
         const updatedSavedAmount = updatedParticipants.reduce(
           (total, participant) => total + participant.contribution,
@@ -94,7 +93,7 @@ function addNewParticipante(newPerson, goalId) {
 }
 function Header({onClick, formIsOpen}) {
   return (
-    <header className="header">
+    <div className="header">
       <h1>Welcome to Goal Tracker</h1>
       <p>
         Goal Tracker helps you set and track your financial savings goals.
@@ -103,7 +102,7 @@ function Header({onClick, formIsOpen}) {
       <Button onClick={onClick}>
         {formIsOpen ? "Close Form" : "Add New Goal"}
       </Button>
-    </header>
+    </div>
   );
 }
 

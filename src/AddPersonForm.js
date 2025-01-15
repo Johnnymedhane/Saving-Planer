@@ -28,13 +28,13 @@ export function AddPersonForm({ onAddperson, id, closeForm }) {
     };
 
     onAddperson(newPerson, id);
-
     setAmount('');
     setImage("https://i.pravatar.cc/48id");
     setName('');
     setError('')
     closeForm(pre => !pre);
   }
+
   function handleContribution(e) {
     let value = e.target.value.replace("$", '');
     if(!/^\d*\.?\d*$/.test(value)){

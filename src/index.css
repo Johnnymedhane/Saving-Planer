@@ -15,45 +15,45 @@
   --color3: #D0E3FF;
   --color4:#E7F1FF;
   --color5:#f9fcff;
-  --text:clamp(1.2rem, 0.185rem + 3.258vw, 0.95rem);
+  --text:clamp(1.2rem, 0.185rem + 3.258vw, 0.705rem);
   --small-text:clamp(0.570rem, 0.185rem + 3.258vw, 0.75rem)
 }
 html{
-  font-family:  poppin, sans-serif
+  font-family:  poppins, sans-serif;
  
 }
 body{
-  background: rgb(2,0,36);
 background: linear-gradient(90deg, 
 rgba(2,0,36,1) 0%,
  rgba(79,79,224,1) 9%,
  rgba(0,212,255,1) 100%);
- padding: 20px;
- 
+ min-height: 100vh;
  font-size: var(--text);
- min-height: 10vh;
- 
-
 }
 
 h1{
-  font-size: clamp(2.100rem, 0.185rem + 3.258vw, 3.625rem);
+  font-size: clamp(1.800rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h2{
-  font-size: clamp(1.900rem, 0.185rem + 3.258vw, 3.625rem);
+  font-size: clamp(1.600rem, 0.185rem + 3.258vw, 3.625rem);
 }
 h3{
-  font-size: clamp(1.900rem, 0.185rem + 3.258vw, 3.235rem)
+  font-size: clamp(1.400rem, 0.185rem + 3.258vw, 3.235rem)
   
 }
 h4, h5, h6{
   font-size: clamp(1.600rem, 0.185rem + 3.258vw, 1.825rem);
 }
-.App{
-   min-height: 100vh; 
-  padding: 10px;
 
+.App {
+  height: 100%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
 }
+
 form{
   position: relative;
   display: flex;
@@ -115,8 +115,8 @@ h3, h4{
 .header {
   text-align: center;
   padding: 2rem;
-  background-color: var(--color4);
-  border-bottom: 1px solid var(--color1);
+  background-color: var(--color5);
+  border-bottom: 4px solid rgb(25, 22, 17);
 
 }
 strong{
@@ -203,26 +203,8 @@ input:focus, textarea:focus{
   color: var(--color4);
  min-height: 100vh;
 }
-
-
-.indication{
-  margin-top: 1.6rem;
-  margin-bottom: 5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  border: 1px solid var(--color5);
-  border-radius: 10px;
-  /* border: 1px solid var(--color3); */
-}
-
  .goal-display h1{
   margin-bottom: 1rem;
- 
-  
 } 
 .goal-display p{
   text-align: center;
@@ -247,6 +229,21 @@ input:focus, textarea:focus{
  margin-top: 1.5rem;
   list-style: none;
 }
+.indication{
+  margin-top: 1.6rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid var(--color5);
+  border-radius: 10px;
+  /* border: 1px solid var(--color3); */
+}
+ 
+
 .description{
   display: flex;
   align-items: center;
@@ -277,14 +274,13 @@ align-items: center;
   
   height: 15px;
   background-color: rgb(0, 191, 255);
-  
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color5);
   font-size: var(--small-text);
   
 }
-
-
 
 .chart{
   position: relative;
@@ -313,6 +309,15 @@ align-items: center;
   font-weight: 600;
   font-size: var(--small-text);
   z-index: 9;
+}
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.icon > .material-symbols-outlined{
+  font-size: 2.5rem;
 }
 .group-management{
   margin-top: 1rem;
@@ -360,23 +365,25 @@ max-width: 700px;
   body{
     padding: 0 0 20px;
   }
-  h2 {
-    font-size: 1.8rem; /* Fixed size for small screens */
+  /* h2, h1 {
+    font-size: 2.5rem; 
   }
 
   h3 {
-    font-size: 1.5rem; /* Fixed size for small screens */
-  }
+    font-size: 1.8rem; 
+  } */
 form{
   max-width: 600px;
 }
 .description{
   flex-direction: column;
-  gap: 5vh;
+  gap: 3vh;
 }
 .indication{
   margin-bottom: 3rem;
   margin-top: 1rem;
+  gap: 2rem;
 }
+
 }
 

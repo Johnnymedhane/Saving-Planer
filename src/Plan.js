@@ -78,7 +78,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
                 <p> <strong>{p.name} </strong></p>
                  <div className="contribution-bar"
                     style={{ width: `${contributionPercentage + 10}px` }}>    
-                    <span>{contributionPercentage}%</span>
+                    <span>{contributionPercentage.toFixed()}%</span>
                         </div>
                   </div> 
                  </li>)
@@ -105,7 +105,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
         </p>
         {showCelebration && <h3 style={{ color: "gold" }}>🎉 Congratulations! Goal achieved! 🎉</h3>}
       </div>
-      <h2>
+      <h2 className="icon">
       <span className="material-symbols-outlined">groups_2
         </span> Group Management
         </h2>
