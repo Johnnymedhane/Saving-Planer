@@ -328,6 +328,8 @@ align-items: center;
   padding: 0.8rem;
   border-radius: 16px;
   max-width: 800px;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 .participante{
   background: rgb(181, 114, 89);
@@ -336,7 +338,7 @@ align-items: center;
   align-items: center;
   margin-top: 0.7rem;
   row-gap: 0.3rem;
-max-width: 700px;
+  max-width: 700px;
   padding: 0.7rem;
   margin-bottom: 0.3rem;
   border-radius: 7px;
@@ -385,6 +387,9 @@ form{
   margin-bottom: 3rem;
   margin-top: 1rem;
   gap: 2rem;
+}
+.group-management{
+  max-height: 400px;
 }
 
 }
