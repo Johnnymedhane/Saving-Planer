@@ -31,7 +31,7 @@ function App() {
     setGoals(pre => [...pre, newItem]);
     console.log(goals)
     alert(`Saved Amount so far ${newItem.savedAmount}$`);
-    setShowForm((prev) => !prev);
+    
   }
   function toggleFormVisibility() {
     setShowForm((prev) => !prev);
