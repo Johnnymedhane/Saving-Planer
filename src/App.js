@@ -60,6 +60,7 @@ function App() {
 }
 
 function addNewParticipante(newPerson, goalId) {
+  let savedAmount = 0;
   setGoals((prev) =>
     prev.map((goal) => {
       if (goal.id === goalId) {
@@ -70,16 +71,17 @@ function addNewParticipante(newPerson, goalId) {
           (total, participant) => total + participant.contribution,
           0
         );
-
+        savedAmount = updatedSavedAmount;
         return {
           ...goal,
           participants: updatedParticipants,
-          savedAmount: updatedSavedAmount, // Update savedAmount
+          savedAmount: updatedSavedAmount, 
         };
       }
       return goal;
     })
   );
+  alert(`Saved Amount so far ${savedAmount}$`)
 }
 
 
