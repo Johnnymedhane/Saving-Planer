@@ -79,7 +79,7 @@ export function CreateGoal({ onSubmit }) {
     setTargetAmount(value);
     setTrgetAmountIsValid(false);
   }
-  
+
   function handleDateInput(e) {
     const selectDate = e.target.value;
     const today = new Date().toISOString().split('T')[0];
@@ -123,6 +123,7 @@ export function CreateGoal({ onSubmit }) {
         <input
           type="date"
           value={deadline}
+
           min={new Date().toISOString().split('T')[0]}
           onChange={handleDateInput} />
       </label>

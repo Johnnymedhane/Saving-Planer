@@ -3,35 +3,35 @@ import { CreateGoal } from "./CreateGoal";
 import { Description } from "./Description";
 import { Button } from "./Button";
 
-let goalList = [
-   {
-    id: crypto.randomUUID(),
+/* let goalList = [
+     {
+     id: crypto.randomUUID(),
     goalName: "Vacation",
     targetAmount: parseFloat(200),
     deadline: "02/07/25",
-    description: "Travel to Japan",
-    savedAmount: parseFloat(50), // Default to 0 at the start
-    participants: [
-      {
+     description: "Travel to Japan",
+      savedAmount: parseFloat(50), // Default to 0 at the start
+       participants: [
+       {
         name: "Admin",
         contribution: 50,
-        id: crypto.randomUUID(),
-        image: "https://i.pravatar.cc/48?u=499476",
+       id: crypto.randomUUID(),
+       image: "https://i.pravatar.cc/48?u=499476",
       }
-    ],
+     ],
     
-  },
-] 
+   },
+ ] */
 
 function App() {
-  const [goals, setGoals]= useState(goalList);
+  const [goals, setGoals]= useState([]);
   const [showForm, setShowForm] = useState(false);
 
   function handleGoalForm(newItem){
     setGoals(pre => [...pre, newItem]);
     console.log(goals)
     alert(`Saved Amount so far ${newItem.savedAmount}$`);
-    setShowForm((prev) => !prev);
+    
   }
   function toggleFormVisibility() {
     setShowForm((prev) => !prev);
