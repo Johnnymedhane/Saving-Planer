@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CreateGoal } from "./CreateGoal";
 import { Description } from "./Description";
 import { Button } from "./Button";
-/*
+
 let goalList = [
    {
     id: crypto.randomUUID(),
@@ -21,10 +21,10 @@ let goalList = [
     ],
     
   },
-] */
+] 
 
 function App() {
-  const [goals, setGoals]= useState([]);
+  const [goals, setGoals]= useState(goalList);
   const [showForm, setShowForm] = useState(false);
 
   function handleGoalForm(newItem){
