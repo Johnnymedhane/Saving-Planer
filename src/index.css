@@ -362,7 +362,7 @@ align-items: center;
   .error{
   color: rgb(249, 56, 56);
   font-size: var(--small-text);
-  line-height: normal;
+ 
  
 }
 
