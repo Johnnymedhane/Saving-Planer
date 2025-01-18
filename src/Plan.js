@@ -56,7 +56,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
   
 
 
-  return (
+    return (
     <li>
       <h1> 🎯 Saving Goal for {plan.goalName} </h1>
       <p>{plan.description}</p>
