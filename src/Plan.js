@@ -6,9 +6,6 @@ import { Participante } from "./Participante";
 export function Plan({ plan, onUpdateContribution, onAddperson }) {
   const [addPersonForm, setAddPersonForm] = useState(false);
   const [star, setStar] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(plan.deadline));
-
-  const percentage = (plan.savedAmount / plan.targetAmount) * 100;
 
   // Calculate time left
   const calculateTimeLeft = useCallback((deadline) => {
@@ -27,6 +24,10 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
 
     return { days, hours, minutes, seconds };
   }, [plan.savedAmount, plan.targetAmount]);
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(plan.deadline));
+
+  const percentage = (plan.savedAmount / plan.targetAmount) * 100;
 
   // Update countdown timer
   useEffect(() => {
@@ -145,4 +146,3 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
     </li>
   );
 }
-
