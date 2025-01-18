@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./Button";
 import { AddPersonForm } from "./AddPersonForm";
 import { Participante } from "./Participante";
@@ -12,20 +12,19 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
   // Calculate percentage dynamically
   const percentage = (plan.savedAmount / plan.targetAmount) * 100;
 
-  // Helper function to calculate remaining time
-  const calculateTimeLeft = useCallback((deadline) => {
-  const deadlineDate = new Date(deadline);
-  const currentDate = new Date();
-  const timeDiff = deadlineDate - currentDate;
+  // Helper function to calculate remaining function calculateTimeLeft(deadline) {
+    const deadlineDate = new Date(deadline);
+    const currentDate = new Date();
+    const timeDiff = deadlineDate - currentDate;
 
-  if (timeDiff <= 0 || plan.savedAmount === plan.targetAmount) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    if (timeDiff <= 0 || plan.savedAmount === plan.targetAmount) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
-  const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-  return { days, hours, minutes, seconds };
-}, [plan.savedAmount]);
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    return { days, hours, minutes, seconds };
+  }
 
   // Update the countdown timer
   useEffect(() => {
@@ -34,7 +33,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
     }, 1000);
 
     return () => clearInterval(timer); // Cleanup interval on unmount
-  }, [plan.deadline, calculateTimeLeft]);
+  }, [plan.deadline]);
 
   // Animate progress
   useEffect(() => {
