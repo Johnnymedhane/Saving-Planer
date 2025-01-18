@@ -35,7 +35,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [plan.deadline]);
+  }, [plan.deadline, calculateTimeLeft]);
 
   // Animate progress
   useEffect(() => {
