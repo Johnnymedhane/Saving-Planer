@@ -78,7 +78,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
                       </p>
                       <div
                         className="contribution-bar"
-                        style={{ width: `${contributionPercentage + 10}px` }}
+                        style={{ width: `${contributionPercentage + 20}px` }}
                       >
                         <span>{contributionPercentage.toFixed()}%</span>
                       </div>

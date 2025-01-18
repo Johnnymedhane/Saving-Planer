@@ -260,6 +260,7 @@ input:focus, textarea:focus{
 }
 .contributions p {
   line-height: normal;
+ text-align: left;
 }
 .contributions p strong{
   line-height: normal;
@@ -269,6 +270,7 @@ input:focus, textarea:focus{
 .percentage-contibution {
   display: flex;
   gap: 8px;
+justify-content: center;
 align-items: center;
 }
 .contribution-bar {

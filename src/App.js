@@ -46,7 +46,7 @@ function App() {
       participant.id === participantId ? {
         ...participant, contribution: participant.contribution + parseFloat(amount)
       } : participant
-    ), 
+    ),
     savedAmount: goal.participants.reduce(
       (total, participant) =>
         participant.id === participantId
