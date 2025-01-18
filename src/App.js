@@ -30,6 +30,7 @@ function App() {
   function handleGoalForm(newItem){
     setGoals(pre => [...pre, newItem]);
     console.log(goals)
+    setShowForm((prev) => !prev);
     alert(`Saved Amount so far ${newItem.savedAmount}$`);
     
   }
