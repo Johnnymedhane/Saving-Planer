@@ -34,7 +34,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
     }, 1000);
 
     return () => clearInterval(timer); // Cleanup interval on unmount
-  }, [plan.deadline]);
+  }, [plan.deadline, calculateTimeLeft]);
 
   // Animate progress
   useEffect(() => {
