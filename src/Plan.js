@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "./Button";
 import { AddPersonForm } from "./AddPersonForm";
 import { Participante } from "./Participante";
@@ -11,7 +11,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
   const percentage = (plan.savedAmount / plan.targetAmount) * 100;
 
   // Calculate time left
-  function calculateTimeLeft(deadline) {
+  const calculateTimeLeft = useCallback((deadline) => {
     const deadlineDate = new Date(deadline);
     const currentDate = new Date();
     const timeDiff = deadlineDate - currentDate;
@@ -26,7 +26,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
     return { days, hours, minutes, seconds };
-  }
+  }, [plan.savedAmount, plan.targetAmount]);
 
   // Update countdown timer
   useEffect(() => {
