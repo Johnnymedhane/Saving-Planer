@@ -55,6 +55,10 @@ export function CreateGoal({ onSubmit }) {
       setErrorMessage("Number is too large");
       return;
     }
+    if(parseFloat(value) >= parseFloat(targetAmount)) {
+      setErrorMessage("Initial contribution should less than TargetAmout");
+      return;
+    }
     setErrorMessage("");
     setDeposit(value);
     setDepositIsValid(false);
@@ -74,6 +78,18 @@ export function CreateGoal({ onSubmit }) {
     setErrorMessage("");
     setTargetAmount(value);
     setTrgetAmountIsValid(false);
+  }
+
+  function handleDateInput(e) {
+    const selectDate = e.target.value;
+    const today = new Date().toISOString().split('T')[0];
+    console.log(today)
+    if (selectDate < today) {
+      setErrorMessage('Deadline must be a future date.')
+      return;
+    }
+    setErrorMessage('');
+    setDeadline(selectDate);
   }
 
   return (
@@ -107,8 +123,8 @@ export function CreateGoal({ onSubmit }) {
         <input
           type="date"
           value={deadline}
-          min={new Date().toISOString().split("T")[0]}
-          onChange={(e) => setDeadline(e.target.value)} />
+          min={new Date().toISOString().split('T')[0]}
+          onChange={handleDateInput} />
       </label>
       <label>Initial Deposit:
         <input

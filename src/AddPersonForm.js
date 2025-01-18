@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { Button } from "./Button";
+import { plan } from "./Plan";
 
 
 
-export function AddPersonForm({ onAddperson, id, closeForm }) {
+export function AddPersonForm({ onAddperson, id, closeForm, plan }) {
   const [name, setName] = useState('');
   const [image, setImage] = useState('https://i.pravatar.cc/48');
   const [amount, setAmount] = useState('');
   const [error, setError] =useState('')
-
   
-
-
+   const amountLeft = plan.targetAmount - plan.savedAmount;
+  
 
   function handleAddPerson(e) {
     e.preventDefault();
@@ -33,6 +33,8 @@ export function AddPersonForm({ onAddperson, id, closeForm }) {
     setName('');
     setError('')
     closeForm(pre => !pre);
+
+    
   }
 
   function handleContribution(e) {
@@ -41,7 +43,7 @@ export function AddPersonForm({ onAddperson, id, closeForm }) {
       setError("Please enter a valid number");
       return;
     }
-    if (value.length > 15) {
+    if (value.length > 15 || value > amountLeft) {
       setError("Number is too large");
       return;
     }

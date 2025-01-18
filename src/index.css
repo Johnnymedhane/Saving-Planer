@@ -360,9 +360,12 @@ align-items: center;
   border-radius: 50%;
 }
 
- label .error{
-  color: red;
+
+  .error{
+  color: rgb(249, 56, 56);
   font-size: var(--small-text);
+ 
+ 
 }
 
 @media  screen and (max-width:768px) {
@@ -389,7 +392,7 @@ form{
   gap: 2rem;
 }
 .group-management{
-  max-height: 400px;
+  max-height: 380px;
 }
 
 }
