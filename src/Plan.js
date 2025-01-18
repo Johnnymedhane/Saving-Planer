@@ -137,7 +137,7 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
 
       {addPersonForm && (
         <AddPersonForm
-          onAddperson={onAddperson}
+          onAddPerson={onAddperson}
           id={plan.id}
           closeForm={setAddPersonForm}
           plan={plan}
