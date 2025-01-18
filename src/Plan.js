@@ -13,19 +13,19 @@ export function Plan({ plan, onUpdateContribution, onAddperson }) {
   const percentage = (plan.savedAmount / plan.targetAmount) * 100;
 
   // Helper function to calculate remaining time
-  function calculateTimeLeft(deadline) {
-    const deadlineDate = new Date(deadline);
-    const currentDate = new Date();
-    const timeDiff = deadlineDate - currentDate;
+  const calculateTimeLeft = useCallback((deadline) => {
+  const deadlineDate = new Date(deadline);
+  const currentDate = new Date();
+  const timeDiff = deadlineDate - currentDate;
 
-    if (timeDiff <= 0 || plan.savedAmount === plan.targetAmount) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  if (timeDiff <= 0 || plan.savedAmount === plan.targetAmount) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
-    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-    return { days, hours, minutes, seconds };
-  }
+  const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+  return { days, hours, minutes, seconds };
+}, [plan.savedAmount]);
 
   // Update the countdown timer
   useEffect(() => {
